@@ -114,7 +114,7 @@ vim.api.nvim_exec(
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "gopls", "lua_ls", "terraformls" },
+	ensure_installed = { "gopls", "lua_ls", "terraformls", "yamlls" },
 })
 
 local lspconfig = require("lspconfig")
@@ -122,6 +122,16 @@ lspconfig.gopls.setup({})
 lspconfig.lua_ls.setup({})
 lspconfig.dockerls.setup({})
 lspconfig.terraformls.setup({})
+
+lspconfig.yamlls.setup({
+	settings = {
+		yaml = {
+			schemas = {
+				kubernetes = "globPattern",
+			},
+		},
+	},
+})
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
