@@ -36,9 +36,11 @@ local plugins = {
 	{ "rafamadriz/friendly-snippets" },
 	{ "kyazdani42/nvim-tree.lua" },
 	{ "mbbill/undotree" },
+	{ "nvim-tree/nvim-web-devicons" },
 }
 
 require("lazy").setup(plugins, {})
+require("nvim-web-devicons").setup({})
 
 require("nvim-tree").setup({
 	disable_netrw = true,
