@@ -114,7 +114,7 @@ vim.api.nvim_exec(
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "gopls", "lua_ls", "terraformls", "yamlls" },
+	ensure_installed = { "gopls", "lua_ls", "terraformls", "yamlls", "clangd"},
 })
 
 local lspconfig = require("lspconfig")
