@@ -92,7 +92,6 @@ vim.keymap.set("n", "<C-g>r", require("gitsigns").reset_hunk, {})
 vim.keymap.set("n", "<C-g>n", require("gitsigns").next_hunk, {})
 vim.keymap.set("n", "<C-g>N", require("gitsigns").prev_hunk, {})
 
--- Форматирование файлов
 require("formatter").setup({
 	filetype = {
 		lua = { require("formatter.filetypes.lua").stylua },
@@ -122,7 +121,6 @@ lspconfig.lua_ls.setup({})
 lspconfig.dockerls.setup({})
 lspconfig.terraformls.setup({})
 
--- Настройка LuaSnip
 require("luasnip.loaders.from_vscode").lazy_load()
 
 local cmp = require("cmp")
@@ -175,7 +173,6 @@ cmp.setup.cmdline(":", {
 	},
 })
 
---hotkeys
 vim.keymap.set("v", "<C-S-c>", '"+y', { noremap = true, silent = true })
 vim.keymap.set("n", "<C-S-v>", '"+p', { noremap = true, silent = true })
 vim.keymap.set("i", "<C-S-v>", "<C-r>+", { noremap = true, silent = true })
@@ -204,11 +201,10 @@ vim.keymap.set("i", "<C-S-Right>", "<Esc>v<Right>", { noremap = true, silent = t
 
 vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
-vim.opt.undofile = true 
-vim.opt.undodir = vim.fn.stdpath("data") .. "/undodir" 
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.stdpath("data") .. "/undodir"
 
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>", { noremap = true, silent = true })
-
 
 vim.api.nvim_command("highlight NvimTreeNormal guibg=NONE ctermbg=NONE")
 vim.api.nvim_command("highlight NvimTreeNormalNC guibg=NONE ctermbg=NONE")
